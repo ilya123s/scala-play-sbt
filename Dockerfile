@@ -29,6 +29,8 @@ RUN apk add --no-cache curl bash && \
   curl -sL "http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz" | gunzip | tar -x -C /usr/local && \
   rm -rf /var/cache/apk/* && \
   echo -ne "- with sbt $SBT_VERSION\n" >> /root/.built
+  
+RUN sbt sbtVersion
 
 # Install activator
 RUN apk add --update bash curl openssl ca-certificates && \
