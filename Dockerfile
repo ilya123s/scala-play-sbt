@@ -33,12 +33,12 @@ RUN apk add --no-cache curl bash && \
 # Install activator
 RUN apk add --update bash curl openssl ca-certificates && \
   curl -L -o /tmp/activator.zip \
-    https://downloads.typesafe.com/typesafe-activator/$ACTIVATOR_VERSION/typesafe-activator-$ACTIVATOR_VERSION-minimal.zip && \
+    https://downloads.typesafe.com/typesafe-activator/$ACTIVATOR_VERSION/typesafe-activator-$ACTIVATOR_VERSION.zip && \
   mkdir -p /opt/activator && \
   unzip /tmp/activator.zip -d /opt/activator && \
   rm /tmp/activator.zip && \
-  chmod +x /opt/activator/activator-$ACTIVATOR_VERSION-minimal/bin/activator && \
-  ln -s /opt/activator/activator-$ACTIVATOR_VERSION-minimal/bin/activator /usr/bin/activator && \
+  chmod +x /opt/activator/activator-$ACTIVATOR_VERSION/bin/activator && \
+  ln -s /opt/activator/activator-$ACTIVATOR_VERSION/bin/activator /usr/bin/activator && \
   rm -rf /tmp/* /var/cache/apk/*
 
 # Prebuild with activator
