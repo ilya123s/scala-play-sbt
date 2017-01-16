@@ -1,7 +1,5 @@
 FROM anapsix/alpine-java:jdk8
 
-MAINTAINER cignoir <cignoir@gmail.com>
-
 ENV SCALA_VERSION 2.11.8
 ENV SCALA_HOME /usr/share/scala
 
