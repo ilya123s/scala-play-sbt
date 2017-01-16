@@ -8,8 +8,6 @@ ENV SCALA_HOME /usr/share/scala
 ENV SBT_VERSION 0.13.13
 ENV SBT_HOME /usr/local/sbt-launcher-packaging-${SBT_VERSION}
 ENV PATH ${PATH}:${SBT_HOME}/bin
-
-ENV PLAY_VERSION 2.5.10
 ENV ACTIVATOR_VERSION 1.3.12
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
@@ -45,25 +43,5 @@ RUN apk add --update bash curl openssl ca-certificates && \
   
 # Define working directory
 WORKDIR /root
-
-# Prebuild with activator
-#COPY . /tmp/build/
-
-# activator sometimes failed because of network. retry 3 times.
-#RUN cd /tmp/build && \
-#  (activator compile || activator compile || activator compile) && \
-#  (activator test:compile || activator test:compile || activator test:compile) && \
-#  rm -rf /tmp/build
-
-
-
-# Install Play Framework
-#RUN wget "http://downloads.typesafe.com/play/$PLAY_VERSION/play-$PLAY_VERSION.zip" && \
-#  unzip play-$PLAY_VERSION.zip -d /usr/local && \
-#  ln -s /usr/local/play-$PLAY_VERSION/play /usr/local/bin/play && \
-#  rm -f *.zip
-
-# Clean up
-#RUN apk del .build-dependencies curl unzip
 
 EXPOSE 9000 9999
