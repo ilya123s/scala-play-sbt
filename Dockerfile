@@ -6,6 +6,9 @@ ENV SCALA_VERSION 2.12.1
 ENV SBT_VERSION 0.13.13
 ENV ACTIVATOR_VERSION 1.3.12
 
+# Update apt-get 
+RUN apk add -y install curl wget unzip
+
 # Install Scala
 ## Piping curl directly in tar
 RUN \
