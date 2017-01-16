@@ -6,7 +6,7 @@ ENV SCALA_VERSION 2.11.8
 ENV SCALA_HOME /usr/share/scala
 
 ENV SBT_VERSION 0.13.13
-ENV SBT_HOME /usr/local/sbt
+ENV SBT_HOME /usr/local/sbt-launcher-packaging-${SBT_VERSION}
 ENV PATH ${PATH}:${SBT_HOME}/bin
 
 ENV PLAY_VERSION 2.5.10
