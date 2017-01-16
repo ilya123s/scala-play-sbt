@@ -26,8 +26,6 @@ RUN apk add --no-cache curl bash && \
   rm -rf /var/cache/apk/* && \
   echo -ne "- with sbt $SBT_VERSION\n" >> /root/.built
   
-RUN sbt sbtVersion
-
 # Install activator
 RUN apk add --update bash curl openssl ca-certificates && \
   curl -L -o /tmp/activator.zip \
