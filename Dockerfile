@@ -40,6 +40,9 @@ RUN apk add --update bash curl openssl ca-certificates && \
   chmod +x /opt/activator/activator-dist-$ACTIVATOR_VERSION/bin/activator && \
   ln -s /opt/activator/activator-dist-$ACTIVATOR_VERSION/bin/activator /usr/bin/activator && \
   rm -rf /tmp/* /var/cache/apk/*
+  
+# Define working directory
+WORKDIR /root
 
 # Prebuild with activator
 #COPY . /tmp/build/
