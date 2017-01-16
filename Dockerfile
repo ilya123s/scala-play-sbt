@@ -42,13 +42,13 @@ RUN apk add --update bash curl openssl ca-certificates && \
   rm -rf /tmp/* /var/cache/apk/*
 
 # Prebuild with activator
-COPY . /tmp/build/
+#COPY . /tmp/build/
 
 # activator sometimes failed because of network. retry 3 times.
-RUN cd /tmp/build && \
-  (activator compile || activator compile || activator compile) && \
-  (activator test:compile || activator test:compile || activator test:compile) && \
-  rm -rf /tmp/build
+#RUN cd /tmp/build && \
+#  (activator compile || activator compile || activator compile) && \
+#  (activator test:compile || activator test:compile || activator test:compile) && \
+#  rm -rf /tmp/build
 
 
 
