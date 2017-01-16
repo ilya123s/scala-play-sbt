@@ -34,9 +34,6 @@ RUN apk add --no-cache curl bash && \
 RUN apk add --update bash curl openssl ca-certificates && \
   curl -L -o /tmp/activator.zip \
     https://downloads.typesafe.com/typesafe-activator/$ACTIVATOR_VERSION/typesafe-activator-$ACTIVATOR_VERSION-minimal.zip && \
-  openssl dgst -sha256 /tmp/activator.zip \
-    | grep '15352ce253aa804f707ef8be86390ee1ee91da4b78dbb2729ab1e9cae01d8937' \
-    || (echo 'shasum mismatch' && false) && \
   mkdir -p /opt/activator && \
   unzip /tmp/activator.zip -d /opt/activator && \
   rm /tmp/activator.zip && \
