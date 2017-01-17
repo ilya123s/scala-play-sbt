@@ -34,11 +34,8 @@ RUN apk add --update bash curl openssl ca-certificates && \
   mkdir -p /opt/activator && \
   unzip /tmp/activator.zip -d /opt/activator && \
   rm /tmp/activator.zip && \
-  chmod +x /opt/activator/activator-dist-$ACTIVATOR_VERSION/bin/activator && \
-  ln -s /opt/activator/activator-dist-$ACTIVATOR_VERSION/bin/activator /usr/bin/activator && \
+  chmod -R +x /opt/activator/activator-dist-$ACTIVATOR_VERSION/bin && \
+  #ln -s /opt/activator/activator-dist-$ACTIVATOR_VERSION/bin/activator /usr/bin/activator && \
   rm -rf /tmp/* /var/cache/apk/*
-  
-# Define working directory
-WORKDIR /root
 
 EXPOSE 9000 9999
