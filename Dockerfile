@@ -7,7 +7,7 @@ ENV SBT_VERSION 0.13.13
 ENV SBT_HOME /usr/local/sbt-launcher-packaging-${SBT_VERSION}
 ENV ACTIVATOR_VERSION 1.3.12
 ENV ACTIVATOR_HOME /opt/activator/activator-dist-${ACTIVATOR_VERSION}
-ENV PATH ${PATH}:${SBT_HOME}/bin:${ACTIVATOR_HOME}/bin/activator
+ENV PATH ${PATH}:${SBT_HOME}/bin:${ACTIVATOR_HOME}/bin
 
 RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
   apk add --no-cache bash curl unzip
